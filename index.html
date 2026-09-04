@@ -688,6 +688,48 @@
       font-size: 12.5px;
     }
 
+
+    /* CALENDAR ACTIONS */
+
+    .calendar-block {
+      max-width: 420px;
+      margin: 24px auto 0;
+      text-align: center;
+    }
+
+    .calendar-block p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .calendar-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .calendar-actions .btn {
+      flex: 1 1 190px;
+      max-width: 240px;
+      padding: 13px 18px;
+      font-size: 14px;
+    }
+
+    .calendar-actions .btn-secondary {
+      background: #fff;
+      color: var(--green);
+      border: 1.5px solid var(--green);
+      box-shadow: none;
+    }
+
+    .calendar-actions .btn-secondary:hover {
+      background: var(--tint-1);
+      color: var(--green);
+      box-shadow: none;
+    }
+
     /* WAITLIST */
 
     .nahradnik {
@@ -1482,6 +1524,28 @@
             Pokud by se něco změnilo, dáme ti vědět na zadaný e-mail.
           </p>
 
+          <div class="calendar-block">
+            <p>Přidej si kvíz do kalendáře, ať ti neuteče.</p>
+
+            <div class="calendar-actions">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                id="ics-calendar-btn"
+              >
+                Přidat do kalendáře (.ics)
+              </button>
+
+              <button
+                type="button"
+                class="btn"
+                id="google-calendar-btn"
+              >
+                Přidat do Google Kalendáře
+              </button>
+            </div>
+          </div>
+
         </div>
 
         <!-- FULL TEAMS -->
@@ -1961,6 +2025,165 @@
       }
 
     }
+
+
+
+    /* =========================================================
+       KALENDÁŘ
+       ========================================================= */
+
+    const EVENT_TITLE = "Knihobotí knižní kvíz";
+    const EVENT_LOCATION = "Knihobot Praha 7, Strossmayerovo náměstí, Praha";
+    const EVENT_DESCRIPTION =
+      "Knihobotí knižní kvíz z popkultury a literatury. Těšíme se na tebe!";
+
+    /*
+      Akce začíná 17. 9. 2026 v 18:00.
+      Pro kalendář je nastavený konec ve 20:00.
+    */
+    const EVENT_START_LOCAL = "2026-09-17T18:00:00";
+    const EVENT_END_LOCAL = "2026-09-17T20:00:00";
+
+
+    function pad2(value) {
+      return String(value).padStart(2, "0");
+    }
+
+
+    function localDateToUtcIcs(localDateString) {
+
+      const date = new Date(localDateString);
+
+      return (
+        date.getUTCFullYear() +
+        pad2(date.getUTCMonth() + 1) +
+        pad2(date.getUTCDate()) +
+        "T" +
+        pad2(date.getUTCHours()) +
+        pad2(date.getUTCMinutes()) +
+        pad2(date.getUTCSeconds()) +
+        "Z"
+      );
+
+    }
+
+
+    function escapeIcsText(value) {
+
+      return String(value)
+        .replace(/\\/g, "\\\\")
+        .replace(/\n/g, "\\n")
+        .replace(/,/g, "\\,")
+        .replace(/;/g, "\\;");
+
+    }
+
+
+    function downloadIcs() {
+
+      const startUtc =
+        localDateToUtcIcs(EVENT_START_LOCAL);
+
+      const endUtc =
+        localDateToUtcIcs(EVENT_END_LOCAL);
+
+      const nowUtc =
+        localDateToUtcIcs(new Date().toISOString());
+
+      const uid =
+        "knihobot-kviz-20260917@knihobot.cz";
+
+      const ics =
+        [
+          "BEGIN:VCALENDAR",
+          "VERSION:2.0",
+          "PRODID:-//Knihobot//Knižní kvíz//CS",
+          "CALSCALE:GREGORIAN",
+          "METHOD:PUBLISH",
+          "BEGIN:VEVENT",
+          "UID:" + uid,
+          "DTSTAMP:" + nowUtc,
+          "DTSTART:" + startUtc,
+          "DTEND:" + endUtc,
+          "SUMMARY:" + escapeIcsText(EVENT_TITLE),
+          "LOCATION:" + escapeIcsText(EVENT_LOCATION),
+          "DESCRIPTION:" + escapeIcsText(EVENT_DESCRIPTION),
+          "END:VEVENT",
+          "END:VCALENDAR"
+        ].join("\r\n");
+
+      const blob =
+        new Blob(
+          [ics],
+          {
+            type: "text/calendar;charset=utf-8"
+          }
+        );
+
+      const url =
+        URL.createObjectURL(blob);
+
+      const link =
+        document.createElement("a");
+
+      link.href = url;
+      link.download =
+        "knihobot-knizni-kviz-17-9-2026.ics";
+
+      document.body.appendChild(link);
+
+      link.click();
+      link.remove();
+
+      setTimeout(
+        () => URL.revokeObjectURL(url),
+        1000
+      );
+
+    }
+
+
+    function openGoogleCalendar() {
+
+      const startUtc =
+        localDateToUtcIcs(EVENT_START_LOCAL);
+
+      const endUtc =
+        localDateToUtcIcs(EVENT_END_LOCAL);
+
+      const params =
+        new URLSearchParams({
+          action: "TEMPLATE",
+          text: EVENT_TITLE,
+          dates: startUtc + "/" + endUtc,
+          details: EVENT_DESCRIPTION,
+          location: EVENT_LOCATION
+        });
+
+      window.open(
+        "https://calendar.google.com/calendar/render?" +
+          params.toString(),
+        "_blank",
+        "noopener"
+      );
+
+    }
+
+
+    document
+      .getElementById("ics-calendar-btn")
+      .addEventListener(
+        "click",
+        downloadIcs
+      );
+
+
+    document
+      .getElementById("google-calendar-btn")
+      .addEventListener(
+        "click",
+        openGoogleCalendar
+      );
 
 
     /* =========================================================
