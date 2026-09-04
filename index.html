@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Registrace – Knihobotí knižní kvíz</title>
-  <meta name="description" content="Přihlas se na Knihobotí knižní kvíz v Praze. Kvíz popkultury a literatury – s týmem nebo jako jednotlivec." />
+
+  <meta
+    name="description"
+    content="Přihlas se na Knihobotí knižní kvíz v Praze. Kvíz popkultury a literatury – s týmem nebo jako jednotlivec."
+  />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
     :root {
       --green: #264D39;
@@ -23,15 +34,25 @@
       --body: #313533;
       --body-2: #49504D;
       --muted: #6E7873;
+
       --radius-btn: 4px;
       --radius-card: 8px;
       --radius-pill: 24px;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: var(--sans);
       color: var(--body);
@@ -39,10 +60,19 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
 
-    /* ---------- Header / logo ---------- */
-    header { padding: 28px 0 4px; }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER */
+
+    header {
+      padding: 28px 0 4px;
+    }
+
     .brand {
       display: inline-flex;
       flex-direction: column;
@@ -50,670 +80,2662 @@
       gap: 8px;
       text-decoration: none;
     }
-    .brand-logo { width: 190px; height: auto; display: block; }
 
-    /* ---------- Hero / intro ---------- */
-    .hero { text-align: center; padding: 24px 0 40px; }
+    .brand-logo {
+      width: 190px;
+      height: auto;
+      display: block;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      padding: 24px 0 40px;
+    }
+
     .badge {
       display: inline-block;
       background: var(--yellow);
       color: var(--yellow-text);
-      font-weight: 700; font-size: 13px;
-      letter-spacing: 0.6px; text-transform: uppercase;
-      padding: 7px 16px; border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: var(--radius-pill);
       margin-bottom: 22px;
     }
+
     .hero h1 {
-      font-family: var(--serif); font-weight: 700;
-      font-size: clamp(30px, 6vw, 46px); line-height: 1.12;
-      color: var(--green); margin-bottom: 16px; letter-spacing: -0.5px;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(30px, 6vw, 46px);
+      line-height: 1.12;
+      color: var(--green);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
     }
 
-    /* Info bar (miesto + čas) */
     .infobar {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 14px;
-      background: var(--tint-1); border: 1px solid var(--tint-2);
-      border-radius: var(--radius-card); padding: 14px 18px;
-      max-width: 560px; margin: 0 auto 26px; text-align: left;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 14px;
+      background: var(--tint-1);
+      border: 1px solid var(--tint-2);
+      border-radius: var(--radius-card);
+      padding: 14px 18px;
+      max-width: 560px;
+      margin: 0 auto 26px;
+      text-align: left;
     }
-    .infobar .item { display: flex; align-items: center; gap: 9px; font-size: 14.5px; color: var(--green-text); font-weight: 600; }
-    .infobar .item svg { flex: 0 0 auto; }
-    .infobar .item small { display: block; font-weight: 500; color: var(--muted); font-size: 12.5px; }
+
+    .infobar .item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 14.5px;
+      color: var(--green-text);
+      font-weight: 600;
+    }
+
+    .infobar .item svg {
+      flex: 0 0 auto;
+    }
+
+    .infobar .item small {
+      display: block;
+      font-weight: 500;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
 
     .hero .lead {
-      font-size: clamp(16px, 2.6vw, 19px); font-weight: 600;
-      color: var(--green-text); max-width: 580px; margin: 0 auto 16px;
+      font-size: clamp(16px, 2.6vw, 19px);
+      font-weight: 600;
+      color: var(--green-text);
+      max-width: 580px;
+      margin: 0 auto 16px;
     }
-    .hero p { font-size: 16px; color: var(--body-2); max-width: 580px; margin: 0 auto 14px; }
 
-    /* Disclaimer note */
-    .note {
-      background: #fff; border: 1px dashed var(--tint-3);
-      border-radius: var(--radius-card); padding: 18px 20px;
-      max-width: 600px; margin: 22px auto 0; text-align: left;
+    .hero p {
+      font-size: 16px;
+      color: var(--body-2);
+      max-width: 580px;
+      margin: 0 auto 14px;
     }
-    .note strong { color: var(--green); }
-    .note p { font-size: 14.5px; color: var(--body-2); margin: 0; }
+
+    .note {
+      background: #fff;
+      border: 1px dashed var(--tint-3);
+      border-radius: var(--radius-card);
+      padding: 18px 20px;
+      max-width: 600px;
+      margin: 22px auto 0;
+      text-align: left;
+    }
+
+    .note strong {
+      color: var(--green);
+    }
+
+    .note p {
+      font-size: 14.5px;
+      color: var(--body-2);
+      margin: 0;
+    }
 
     .btn {
       display: inline-block;
-      background: var(--green); color: #fff;
-      font-family: var(--sans); font-weight: 700; font-size: 16px;
-      border: none; border-radius: var(--radius-btn);
-      padding: 16px 32px; cursor: pointer; text-decoration: none;
-      transition: transform 0.12s ease, background 0.2s ease, box-shadow 0.2s ease;
+      background: var(--green);
+      color: #fff;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 16px;
+      border: none;
+      border-radius: var(--radius-btn);
+      padding: 16px 32px;
+      cursor: pointer;
+      text-decoration: none;
+      transition:
+        transform 0.12s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
       box-shadow: 0 4px 14px rgba(38, 77, 57, 0.18);
     }
-    .btn:hover { background: #1d3c2d; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(38,77,57,0.25); }
-    .btn:active { transform: translateY(0); }
-    .btn:disabled { opacity: 0.5; cursor: default; transform: none; box-shadow: none; }
-    .hero .btn { margin-top: 26px; }
-    .cta-note { font-size: 14px; color: var(--muted); margin-top: 14px; }
+
+    .btn:hover {
+      background: #1d3c2d;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(38, 77, 57, 0.25);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: default;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .hero .btn {
+      margin-top: 26px;
+    }
+
+    .cta-note {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 14px;
+    }
 
     .btn-ghost {
-      background: transparent; color: var(--green-muted);
-      font-family: var(--sans); font-weight: 700; font-size: 15px;
-      border: none; padding: 16px 8px; cursor: pointer;
-      border-radius: var(--radius-btn); transition: color 0.15s ease;
+      background: transparent;
+      color: var(--green-muted);
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 15px;
+      border: none;
+      padding: 16px 8px;
+      cursor: pointer;
+      border-radius: var(--radius-btn);
+      transition: color 0.15s ease;
     }
-    .btn-ghost:hover { color: var(--green); }
 
-    /* ---------- Card / screens ---------- */
-    .form-section { padding-bottom: 72px; }
+    .btn-ghost:hover {
+      color: var(--green);
+    }
+
+    /* CARD / SCREENS */
+
+    .form-section {
+      padding-bottom: 72px;
+    }
+
     .card {
-      background: #fff; border: 1px solid var(--tint-2);
+      background: #fff;
+      border: 1px solid var(--tint-2);
       border-radius: var(--radius-card);
       padding: clamp(24px, 5vw, 46px);
       box-shadow: 0 10px 40px rgba(38, 77, 57, 0.07);
     }
 
-    .screen { display: none; animation: fadeIn 0.32s ease; }
-    .screen.active { display: block; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .screen {
+      display: none;
+      animation: fadeIn 0.32s ease;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .q-title {
-      font-family: var(--serif); font-weight: 700;
-      font-size: clamp(22px, 4vw, 28px); color: var(--green);
-      margin-bottom: 6px; line-height: 1.25;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(22px, 4vw, 28px);
+      color: var(--green);
+      margin-bottom: 6px;
+      line-height: 1.25;
     }
-    .hint { font-size: 14.5px; color: var(--muted); margin-bottom: 24px; }
-    fieldset { border: none; }
-    legend { display: contents; }
 
-    /* option rows / big choices */
-    .opt {
-      display: flex; align-items: center; gap: 14px;
-      border: 1.5px solid var(--tint-2); border-radius: var(--radius-btn);
-      padding: 16px 18px; margin-bottom: 12px; cursor: pointer;
-      transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease; user-select: none;
+    .hint {
+      font-size: 14.5px;
+      color: var(--muted);
+      margin-bottom: 24px;
     }
-    .opt:hover { border-color: var(--tint-3); background: var(--tint-1); }
-    .opt:active { transform: scale(0.995); }
-    .opt input { position: absolute; opacity: 0; width: 0; height: 0; }
-    .box {
-      flex: 0 0 auto; width: 22px; height: 22px;
-      border: 2px solid var(--green-muted); border-radius: 5px;
-      display: grid; place-items: center;
-      transition: background 0.15s ease, border-color 0.15s ease;
-    }
-    .box.radio { border-radius: 50%; }
-    .box svg { width: 13px; height: 13px; opacity: 0; transform: scale(0.6); transition: opacity 0.12s, transform 0.12s; }
-    .opt input:checked ~ .box { background: var(--green); border-color: var(--green); }
-    .opt input:checked ~ .box svg { opacity: 1; transform: scale(1); }
-    .opt input:checked ~ .label-txt { color: var(--green-text); font-weight: 700; }
-    .opt input:focus-visible ~ .box { box-shadow: 0 0 0 3px rgba(38,77,57,0.25); }
-    .opt.selected { border-color: var(--green); background: var(--tint-1); }
-    .label-txt { font-size: 16px; color: var(--body); }
-    .label-txt small { display: block; font-weight: 500; font-size: 13.5px; color: var(--muted); }
-    .radio-dot { width: 9px; height: 9px; border-radius: 50%; background: #fff; opacity: 0; transform: scale(0.4); transition: opacity 0.12s, transform 0.12s; }
-    .opt input:checked ~ .box .radio-dot { opacity: 1; transform: scale(1); }
 
-    /* big choice cards (Q1) */
+    fieldset {
+      border: none;
+    }
+
+    legend {
+      display: contents;
+    }
+
+    /* CHOICES */
+
     .choice {
-      display: flex; align-items: center; gap: 16px;
-      width: 100%; text-align: left;
-      border: 1.5px solid var(--tint-2); border-radius: var(--radius-card);
-      padding: 20px 22px; margin-bottom: 14px; cursor: pointer;
-      background: #fff; font-family: var(--sans);
-      transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease, box-shadow 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      text-align: left;
+      border: 1.5px solid var(--tint-2);
+      border-radius: var(--radius-card);
+      padding: 20px 22px;
+      margin-bottom: 14px;
+      cursor: pointer;
+      background: #fff;
+      font-family: var(--sans);
+      transition:
+        border-color 0.15s ease,
+        background 0.15s ease,
+        transform 0.1s ease,
+        box-shadow 0.2s ease;
     }
-    .choice:hover { border-color: var(--green-muted); background: var(--tint-1); box-shadow: 0 6px 20px rgba(38,77,57,0.08); }
-    .choice:active { transform: scale(0.99); }
-    .choice .emoji { font-size: 30px; flex: 0 0 auto; line-height: 1; }
-    .choice .txt b { display: block; font-size: 18px; color: var(--green); font-weight: 700; }
-    .choice .txt span { font-size: 14px; color: var(--body-2); }
-    .choice .arrow { margin-left: auto; color: var(--green-muted); flex: 0 0 auto; }
 
-    /* number pills (Q2) */
-    .pills { display: flex; gap: 12px; margin-bottom: 6px; }
+    .choice:hover {
+      border-color: var(--green-muted);
+      background: var(--tint-1);
+      box-shadow: 0 6px 20px rgba(38, 77, 57, 0.08);
+    }
+
+    .choice:active {
+      transform: scale(0.99);
+    }
+
+    .choice .emoji {
+      font-size: 30px;
+      flex: 0 0 auto;
+      line-height: 1;
+    }
+
+    .choice .txt b {
+      display: block;
+      font-size: 18px;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .choice .txt span {
+      font-size: 14px;
+      color: var(--body-2);
+    }
+
+    .choice .arrow {
+      margin-left: auto;
+      color: var(--green-muted);
+      flex: 0 0 auto;
+    }
+
+    /* NUMBER PILLS */
+
+    .pills {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
     .pill {
-      flex: 1; position: relative; cursor: pointer;
+      flex: 1;
+      position: relative;
+      cursor: pointer;
     }
-    .pill input { position: absolute; opacity: 0; width: 0; height: 0; }
+
+    .pill input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
     .pill .face {
-      display: grid; place-items: center; height: 84px;
-      border: 1.5px solid var(--tint-2); border-radius: var(--radius-card);
-      font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--green-text);
-      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+      display: grid;
+      place-items: center;
+      height: 84px;
+      border: 1.5px solid var(--tint-2);
+      border-radius: var(--radius-card);
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--green-text);
+      transition:
+        border-color 0.15s,
+        background 0.15s,
+        transform 0.1s;
     }
-    .pill:hover .face { border-color: var(--green-muted); background: var(--tint-1); }
-    .pill input:checked ~ .face { border-color: var(--green); background: var(--green); color: #fff; }
-    .pill input:focus-visible ~ .face { box-shadow: 0 0 0 3px rgba(38,77,57,0.25); }
 
-    /* inputs */
-    .field { margin-bottom: 18px; }
-    .field label.lbl { display: block; font-size: 14px; font-weight: 600; color: var(--green-text); margin-bottom: 7px; }
-    input[type="email"], input[type="text"] {
-      width: 100%; font-family: var(--sans); font-size: 16px; color: var(--body);
-      background: var(--cream); border: 1.5px solid var(--tint-2);
-      border-radius: var(--radius-btn); padding: 14px 16px;
-      transition: border-color 0.15s ease, background 0.15s ease;
+    .pill:hover .face {
+      border-color: var(--green-muted);
+      background: var(--tint-1);
     }
-    input[type="email"]:focus, input[type="text"]:focus {
-      outline: none; border-color: var(--green); background: #fff;
-      box-shadow: 0 0 0 3px rgba(38,77,57,0.10);
-    }
-    input::placeholder { color: #9aa39e; }
 
-    /* consent */
+    .pill input:checked ~ .face {
+      border-color: var(--green);
+      background: var(--green);
+      color: #fff;
+    }
+
+    .pill input:focus-visible ~ .face {
+      box-shadow: 0 0 0 3px rgba(38, 77, 57, 0.25);
+    }
+
+    /* INPUTS */
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label.lbl {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green-text);
+      margin-bottom: 7px;
+    }
+
+    input[type="email"],
+    input[type="text"] {
+      width: 100%;
+      font-family: var(--sans);
+      font-size: 16px;
+      color: var(--body);
+      background: var(--cream);
+      border: 1.5px solid var(--tint-2);
+      border-radius: var(--radius-btn);
+      padding: 14px 16px;
+      transition:
+        border-color 0.15s ease,
+        background 0.15s ease;
+    }
+
+    input[type="email"]:focus,
+    input[type="text"]:focus {
+      outline: none;
+      border-color: var(--green);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(38, 77, 57, 0.10);
+    }
+
+    input::placeholder {
+      color: #9aa39e;
+    }
+
+    /* CONSENT */
+
     .consent {
-      display: flex; align-items: flex-start; gap: 12px;
-      background: var(--tint-1); border: 1px solid var(--tint-2);
-      border-radius: var(--radius-card); padding: 14px 16px; margin: 20px 0 4px; cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--tint-1);
+      border: 1px solid var(--tint-2);
+      border-radius: var(--radius-card);
+      padding: 14px 16px;
+      margin: 20px 0 4px;
+      cursor: pointer;
     }
-    .consent input { position: absolute; opacity: 0; width: 0; height: 0; }
-    .consent .box { margin-top: 2px; }
-    .consent input:checked ~ .box { background: var(--green); border-color: var(--green); }
-    .consent input:checked ~ .box svg { opacity: 1; transform: scale(1); }
-    .consent input:focus-visible ~ .box { box-shadow: 0 0 0 3px rgba(38,77,57,0.25); }
-    .consent .txt { font-size: 12.5px; color: var(--body-2); line-height: 1.5; }
-    .consent .txt a { color: var(--green); font-weight: 600; }
-    .consent-text { display: block; overflow: hidden; max-height: 3em; transition: max-height 0.32s ease; }
-    .consent-text.open { max-height: 46em; }
+
+    .consent input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .consent .box {
+      margin-top: 2px;
+    }
+
+    .consent input:checked ~ .box {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .consent input:checked ~ .box svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .consent input:focus-visible ~ .box {
+      box-shadow: 0 0 0 3px rgba(38, 77, 57, 0.25);
+    }
+
+    .consent .txt {
+      font-size: 12.5px;
+      color: var(--body-2);
+      line-height: 1.5;
+    }
+
+    .consent .txt a {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .consent-text {
+      display: block;
+      overflow: hidden;
+      max-height: 3em;
+      transition: max-height 0.32s ease;
+    }
+
+    .consent-text.open {
+      max-height: 46em;
+    }
+
     .consent-toggle {
-      display: inline-block; margin-top: 6px; padding: 0;
-      background: none; border: none; cursor: pointer;
-      font-family: var(--sans); font-size: 12.5px; font-weight: 700;
-      color: var(--green); text-decoration: underline;
+      display: inline-block;
+      margin-top: 6px;
+      padding: 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--green);
+      text-decoration: underline;
     }
-    .consent-toggle:hover { color: var(--green-text); }
 
-    .field-error { color: var(--coral); font-size: 14px; margin-top: 8px; display: none; font-weight: 600; }
-    .field-error.show { display: block; }
+    .consent-toggle:hover {
+      color: var(--green-text);
+    }
 
-    .step-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 26px; }
-    .step-nav .btn { flex: 1; text-align: center; }
-    .step-nav.single .btn { width: 100%; flex: 1; }
+    .field-error {
+      color: var(--coral);
+      font-size: 14px;
+      margin-top: 8px;
+      display: none;
+      font-weight: 600;
+    }
 
-    /* loading */
-    .loading { text-align: center; padding: 48px 20px; }
+    .field-error.show {
+      display: block;
+    }
+
+    .step-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .step-nav .btn {
+      flex: 1;
+      text-align: center;
+    }
+
+    /* LOADING */
+
+    .loading {
+      text-align: center;
+      padding: 48px 20px;
+    }
+
     .spinner {
-      width: 40px; height: 40px; margin: 0 auto 18px;
-      border: 4px solid var(--tint-2); border-top-color: var(--green);
-      border-radius: 50%; animation: spin 0.8s linear infinite;
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 18px;
+      border: 4px solid var(--tint-2);
+      border-top-color: var(--green);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .loading p { color: var(--muted); font-weight: 600; }
 
-    /* success / info screens */
-    .centered { text-align: center; padding: clamp(24px, 5vw, 44px) clamp(8px,3vw,24px); }
-    .mark {
-      width: 72px; height: 72px; border-radius: 50%;
-      background: var(--tint-2); display: grid; place-items: center; margin: 0 auto 22px;
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
     }
-    .mark.warn { background: #FDECEC; }
-    .centered h2 { font-family: var(--serif); font-weight: 700; font-size: clamp(24px,5vw,30px); color: var(--green); margin-bottom: 14px; }
-    .centered .big-p { color: var(--body-2); font-size: 16.5px; max-width: 480px; margin: 0 auto 8px; }
-    .centered .big-p + .big-p { margin-top: 12px; }
+
+    .loading p {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* SUCCESS */
+
+    .centered {
+      text-align: center;
+      padding: clamp(24px, 5vw, 44px) clamp(8px, 3vw, 24px);
+    }
+
+    .mark {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--tint-2);
+      display: grid;
+      place-items: center;
+      margin: 0 auto 22px;
+    }
+
+    .mark.warn {
+      background: #FDECEC;
+    }
+
+    .centered h2 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(24px, 5vw, 30px);
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+
+    .centered .big-p {
+      color: var(--body-2);
+      font-size: 16.5px;
+      max-width: 480px;
+      margin: 0 auto 8px;
+    }
+
+    .centered .big-p + .big-p {
+      margin-top: 12px;
+    }
 
     .detail-box {
-      background: var(--tint-1); border: 1px solid var(--tint-2);
-      border-radius: var(--radius-card); padding: 18px 20px;
-      max-width: 420px; margin: 24px auto 0; text-align: left;
+      background: var(--tint-1);
+      border: 1px solid var(--tint-2);
+      border-radius: var(--radius-card);
+      padding: 18px 20px;
+      max-width: 420px;
+      margin: 24px auto 0;
+      text-align: left;
     }
-    .detail-box .row { display: flex; align-items: center; gap: 11px; font-size: 15px; color: var(--green-text); font-weight: 600; }
-    .detail-box .row + .row { margin-top: 12px; }
-    .detail-box .row small { display: block; font-weight: 500; color: var(--muted); font-size: 12.5px; }
 
-    /* náhradník inline form */
+    .detail-box .row {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 15px;
+      color: var(--green-text);
+      font-weight: 600;
+    }
+
+    .detail-box .row + .row {
+      margin-top: 12px;
+    }
+
+    .detail-box .row small {
+      display: block;
+      font-weight: 500;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    /* WAITLIST */
+
     .nahradnik {
-      max-width: 440px; margin: 26px auto 0; text-align: left;
-      background: #fff; border: 1px solid var(--tint-2); border-radius: var(--radius-card); padding: 20px;
+      max-width: 440px;
+      margin: 26px auto 0;
+      text-align: left;
+      background: #fff;
+      border: 1px solid var(--tint-2);
+      border-radius: var(--radius-card);
+      padding: 20px;
     }
-    .nahradnik h3 { font-size: 15px; color: var(--green); font-weight: 700; margin-bottom: 6px; }
-    .nahradnik p.sub { font-size: 13.5px; color: var(--muted); margin-bottom: 14px; }
-    .nahradnik .inline { display: flex; gap: 10px; }
-    .nahradnik .inline input { flex: 1; }
-    .nahradnik .inline .btn { padding: 14px 20px; white-space: nowrap; }
-    .nahradnik .ok { display: none; color: var(--green); font-weight: 700; font-size: 14.5px; }
-    .nahradnik .ok.show { display: block; }
 
-    footer { text-align: center; padding: 30px 0 44px; color: var(--muted); font-size: 13px; }
-    footer a { color: var(--green-muted); }
+    .nahradnik h3 {
+      font-size: 15px;
+      color: var(--green);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .nahradnik p.sub {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .nahradnik .inline {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nahradnik .inline input {
+      flex: 1;
+    }
+
+    .nahradnik .inline .btn {
+      padding: 14px 20px;
+      white-space: nowrap;
+    }
+
+    .nahradnik .ok {
+      display: none;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 14.5px;
+    }
+
+    .nahradnik .ok.show {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0 44px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--green-muted);
+    }
 
     @media (max-width: 520px) {
-      .hero { padding: 16px 0 32px; }
-      .label-txt { font-size: 15px; }
-      .nahradnik .inline { flex-direction: column; }
-      .step-nav { flex-direction: column-reverse; }
-      .step-nav .btn, .step-nav .btn-ghost { width: 100%; }
+      .hero {
+        padding: 16px 0 32px;
+      }
+
+      .nahradnik .inline {
+        flex-direction: column;
+      }
+
+      .step-nav {
+        flex-direction: column-reverse;
+      }
+
+      .step-nav .btn,
+      .step-nav .btn-ghost {
+        width: 100%;
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- HEADER -->
+
   <header>
     <div class="wrap" style="text-align:center;">
-      <a class="brand" href="https://knihobot.cz" aria-label="Knihobot">
-        <img class="brand-logo" src="knihobot-logo.png" alt="Knihobot" />
+      <a
+        class="brand"
+        href="https://knihobot.cz"
+        aria-label="Knihobot"
+      >
+        <img
+          class="brand-logo"
+          src="knihobot-logo.png"
+          alt="Knihobot"
+        />
       </a>
     </div>
   </header>
 
-  <!-- ============ INTRO ============ -->
+  <!-- INTRO -->
+
   <section class="hero" id="intro">
     <div class="wrap">
-      <span class="badge">Knižní kvíz · Praha</span>
-      <h1>Registrace na Knihobotí knižní kvíz</h1>
 
-      <div class="infobar" aria-label="Miesto a čas">
+      <span class="badge">Knižní kvíz · Praha</span>
+
+      <h1>
+        Registrace na Knihobotí knižní kvíz
+      </h1>
+
+      <div class="infobar" aria-label="Místo a čas">
+
         <div class="item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11Z" stroke="#264D39" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="#264D39" stroke-width="1.8"/></svg>
-          <span>Knihobot Praha 7<small>Strossmayerovo náměstí</small></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11Z"
+              stroke="#264D39"
+              stroke-width="1.8"
+            />
+            <circle
+              cx="12"
+              cy="10"
+              r="2.4"
+              stroke="#264D39"
+              stroke-width="1.8"
+            />
+          </svg>
+
+          <span>
+            Knihobot Praha 7
+            <small>Strossmayerovo náměstí</small>
+          </span>
         </div>
+
         <div class="item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="#264D39" stroke-width="1.8"/><path d="M12 7.5V12l3 2" stroke="#264D39" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <span>Kvíz začíná v 18:00<small>17. září 2026</small></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <circle
+              cx="12"
+              cy="12"
+              r="8.2"
+              stroke="#264D39"
+              stroke-width="1.8"
+            />
+            <path
+              d="M12 7.5V12l3 2"
+              stroke="#264D39"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+
+          <span>
+            Kvíz začíná v 18:00
+            <small>17. září 2026</small>
+          </span>
         </div>
+
       </div>
 
-      <p class="lead">Přijď si s námi užít večer plný knih, popkultury a dobré atmosféry na pobočku Knihobotu v Praze 7.</p>
-      <p>Čeká tě kvíz z popkultury a literatury, ve kterém otestuješ svoje znalosti i týmového ducha.</p>
+      <p class="lead">
+        Přijď si s námi užít večer plný knih, popkultury a dobré atmosféry
+        na pobočku Knihobotu v Praze 7.
+      </p>
+
+      <p>
+        Čeká tě kvíz z popkultury a literatury, ve kterém otestuješ svoje
+        znalosti i týmového ducha.
+      </p>
 
       <div class="note">
-        <p><strong>Kvíz je pro všechny.</strong> Přihlásit se můžeš s vlastním týmem nebo jako jednotlivec – jednotlivce na místě náhodně rozdělíme do týmů. Pokud vás v týmu není pět, můžeme vám tým doplnit dalšími účastníky. Přijď si zahrát, pobavit se a poznat další knihomoly.</p>
+        <p>
+          <strong>Kvíz je pro všechny.</strong>
+          Přihlásit se můžeš s vlastním týmem nebo jako jednotlivec –
+          jednotlivce na místě náhodně rozdělíme do týmů.
+          Pokud vás v týmu není pět, můžeme vám tým doplnit dalšími účastníky.
+          Přijď si zahrát, pobavit se a poznat další knihomoly.
+        </p>
       </div>
 
-      <button type="button" id="start-btn" class="btn">Registrovat se</button>
-      <p class="cta-note">Zabere to méně než minutu</p>
+      <button
+        type="button"
+        id="start-btn"
+        class="btn"
+      >
+        Registrovat se
+      </button>
+
+      <p class="cta-note">
+        Zabere to méně než minutu
+      </p>
+
     </div>
   </section>
 
-  <!-- ============ FORM / SCREENS ============ -->
-  <section class="form-section" id="app" style="display:none;">
+  <!-- FORM -->
+
+  <section
+    class="form-section"
+    id="app"
+    style="display:none;"
+  >
     <div class="wrap">
+
       <div class="card" id="card">
 
         <!-- LOADING -->
-        <div class="screen loading" data-screen="loading">
+
+        <div
+          class="screen loading"
+          data-screen="loading"
+        >
           <div class="spinner"></div>
-          <p>Načítavam dostupnosť…</p>
+          <p>Načítám dostupnost…</p>
         </div>
 
-        <!-- Q1: TYP -->
-        <div class="screen" data-screen="type">
-          <h2 class="q-title">Máš tým, nebo jdeš jako jednotlivec?</h2>
-          <p class="hint">Vyber, jak se chceš zapojit.</p>
-          <button type="button" class="choice" data-choose="tim">
+        <!-- Q1 -->
+
+        <div
+          class="screen"
+          data-screen="type"
+        >
+          <h2 class="q-title">
+            Máš tým, nebo jdeš jako jednotlivec?
+          </h2>
+
+          <p class="hint">
+            Vyber, jak se chceš zapojit.
+          </p>
+
+          <button
+            type="button"
+            class="choice"
+            data-choose="tim"
+          >
             <span class="emoji">👥</span>
-            <span class="txt"><b>Máme tým</b><span>Přihlásím svůj tým</span></span>
-            <span class="arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+
+            <span class="txt">
+              <b>Máme tým</b>
+              <span>Přihlásím svůj tým</span>
+            </span>
+
+            <span class="arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M9 6l6 6-6 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
           </button>
-          <button type="button" class="choice" data-choose="jednotlivec">
+
+          <button
+            type="button"
+            class="choice"
+            data-choose="jednotlivec"
+          >
             <span class="emoji">🙋</span>
-            <span class="txt"><b>Jdu jako jednotlivec</b><span>Tým ti najdeme na místě</span></span>
-            <span class="arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+
+            <span class="txt">
+              <b>Jdu jako jednotlivec</b>
+              <span>Tým ti najdeme na místě</span>
+            </span>
+
+            <span class="arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M9 6l6 6-6 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
           </button>
+
         </div>
 
-        <!-- Q2: POČET ČLENOV -->
-        <div class="screen" data-screen="teamsize">
-          <h2 class="q-title">Kolik vás je v týmu?</h2>
-          <p class="hint">Pokud vás není 5, můžeme vám tým doplnit.</p>
-          <div class="pills" id="pills">
-            <label class="pill"><input type="radio" name="members" value="2" /><span class="face">2</span></label>
-            <label class="pill"><input type="radio" name="members" value="3" /><span class="face">3</span></label>
-            <label class="pill"><input type="radio" name="members" value="4" /><span class="face">4</span></label>
-            <label class="pill"><input type="radio" name="members" value="5" /><span class="face">5</span></label>
+        <!-- Q2 -->
+
+        <div
+          class="screen"
+          data-screen="teamsize"
+        >
+
+          <h2 class="q-title">
+            Kolik vás je v týmu?
+          </h2>
+
+          <p class="hint">
+            Pokud vás není 5, můžeme vám tým doplnit.
+          </p>
+
+          <div
+            class="pills"
+            id="pills"
+          >
+
+            <label class="pill">
+              <input
+                type="radio"
+                name="members"
+                value="2"
+              />
+              <span class="face">2</span>
+            </label>
+
+            <label class="pill">
+              <input
+                type="radio"
+                name="members"
+                value="3"
+              />
+              <span class="face">3</span>
+            </label>
+
+            <label class="pill">
+              <input
+                type="radio"
+                name="members"
+                value="4"
+              />
+              <span class="face">4</span>
+            </label>
+
+            <label class="pill">
+              <input
+                type="radio"
+                name="members"
+                value="5"
+              />
+              <span class="face">5</span>
+            </label>
+
           </div>
-          <p class="field-error" id="err-members">Vyber počet členů.</p>
+
+          <p
+            class="field-error"
+            id="err-members"
+          >
+            Vyber počet členů.
+          </p>
+
           <div class="step-nav">
-            <button type="button" class="btn-ghost" data-back="type">← Zpět</button>
-            <button type="button" class="btn" data-goto="teamcontact" id="members-next">Pokračovat</button>
+
+            <button
+              type="button"
+              class="btn-ghost"
+              data-back="type"
+            >
+              ← Zpět
+            </button>
+
+            <button
+              type="button"
+              class="btn"
+              data-goto="teamcontact"
+              id="members-next"
+            >
+              Pokračovat
+            </button>
+
           </div>
+
         </div>
 
-        <!-- Q3: KONTAKT TÍMU -->
-        <div class="screen" data-screen="teamcontact">
-          <h2 class="q-title">Kontakt na tým</h2>
-          <p class="hint">Na tento e-mail pošleme informace k akci a případné změny.</p>
-          <form id="team-form" novalidate>
+        <!-- TEAM CONTACT -->
+
+        <div
+          class="screen"
+          data-screen="teamcontact"
+        >
+
+          <h2 class="q-title">
+            Kontakt na tým
+          </h2>
+
+          <p class="hint">
+            Na tento e-mail pošleme informace k akci a případné změny.
+          </p>
+
+          <form
+            id="team-form"
+            novalidate
+          >
+
             <div class="field">
-              <label class="lbl" for="team-name">Název týmu</label>
-              <input type="text" id="team-name" maxlength="80" placeholder="Napr. Knižné mole" autocomplete="off" />
-              <p class="field-error" id="err-team-name">Zadej název týmu.</p>
+
+              <label
+                class="lbl"
+                for="team-name"
+              >
+                Název týmu
+              </label>
+
+              <input
+                type="text"
+                id="team-name"
+                maxlength="80"
+                placeholder="Např. Knižní mole"
+                autocomplete="off"
+              />
+
+              <p
+                class="field-error"
+                id="err-team-name"
+              >
+                Zadej název týmu.
+              </p>
+
             </div>
+
             <div class="field">
-              <label class="lbl" for="team-leader">Jméno / přezdívka kontaktu týmu</label>
-              <input type="text" id="team-leader" maxlength="80" placeholder="Napr. Janka" autocomplete="name" />
-              <p class="field-error" id="err-team-leader">Zadej jméno nebo přezdívku.</p>
+
+              <label
+                class="lbl"
+                for="team-leader"
+              >
+                Jméno / přezdívka kontaktu týmu
+              </label>
+
+              <input
+                type="text"
+                id="team-leader"
+                maxlength="80"
+                placeholder="Např. Jana"
+                autocomplete="name"
+              />
+
+              <p
+                class="field-error"
+                id="err-team-leader"
+              >
+                Zadej jméno nebo přezdívku.
+              </p>
+
             </div>
+
             <div class="field">
-              <label class="lbl" for="team-email">E-mail kontaktu týmu</label>
-              <input type="email" id="team-email" placeholder="janka@email.cz" autocomplete="email" />
-              <p class="field-error" id="err-team-email">Zadej platný e-mail.</p>
+
+              <label
+                class="lbl"
+                for="team-email"
+              >
+                E-mail kontaktu týmu
+              </label>
+
+              <input
+                type="email"
+                id="team-email"
+                placeholder="jana@email.cz"
+                autocomplete="email"
+              />
+
+              <p
+                class="field-error"
+                id="err-team-email"
+              >
+                Zadej platný e-mail.
+              </p>
+
             </div>
+
             <label class="consent">
-              <input type="checkbox" id="team-consent" />
-              <span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              <span class="txt"><span class="consent-text"></span><button type="button" class="consent-toggle" aria-expanded="false">Zobrazit více</button></span>
+
+              <input
+                type="checkbox"
+                id="team-consent"
+              />
+
+              <span class="box">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M5 13l4 4L19 7"
+                    stroke="#fff"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span class="txt">
+                <span class="consent-text"></span>
+
+                <button
+                  type="button"
+                  class="consent-toggle"
+                  aria-expanded="false"
+                >
+                  Zobrazit více
+                </button>
+              </span>
+
             </label>
+
             <div class="step-nav">
-              <button type="button" class="btn-ghost" data-back="teamsize">← Zpět</button>
-              <button type="submit" class="btn" id="team-submit">Přihlásit tým</button>
+
+              <button
+                type="button"
+                class="btn-ghost"
+                data-back="teamsize"
+              >
+                ← Zpět
+              </button>
+
+              <button
+                type="submit"
+                class="btn"
+                id="team-submit"
+              >
+                Přihlásit tým
+              </button>
+
             </div>
-            <p class="field-error" id="err-team-submit" style="text-align:center;">Něco se nepodařilo. Zkus to prosím znovu.</p>
+
+            <p
+              class="field-error"
+              id="err-team-submit"
+              style="text-align:center;"
+            >
+              Něco se nepodařilo. Zkus to prosím znovu.
+            </p>
+
           </form>
+
         </div>
 
-        <!-- JEDNOTLIVEC -->
-        <div class="screen" data-screen="individual">
-          <h2 class="q-title">Tvoje kontaktní údaje</h2>
-          <p class="hint">Na tento e-mail pošleme informace k akci a případné změny.</p>
-          <form id="indiv-form" novalidate>
+        <!-- INDIVIDUAL -->
+
+        <div
+          class="screen"
+          data-screen="individual"
+        >
+
+          <h2 class="q-title">
+            Tvoje kontaktní údaje
+          </h2>
+
+          <p class="hint">
+            Na tento e-mail pošleme informace k akci a případné změny.
+          </p>
+
+          <form
+            id="indiv-form"
+            novalidate
+          >
+
             <div class="field">
-              <label class="lbl" for="indiv-name">Jméno / přezdívka</label>
-              <input type="text" id="indiv-name" maxlength="80" placeholder="Např. Petr" autocomplete="name" />
-              <p class="field-error" id="err-indiv-name">Zadej jméno nebo přezdívku.</p>
+
+              <label
+                class="lbl"
+                for="indiv-name"
+              >
+                Jméno / přezdívka
+              </label>
+
+              <input
+                type="text"
+                id="indiv-name"
+                maxlength="80"
+                placeholder="Např. Petr"
+                autocomplete="name"
+              />
+
+              <p
+                class="field-error"
+                id="err-indiv-name"
+              >
+                Zadej jméno nebo přezdívku.
+              </p>
+
             </div>
+
             <div class="field">
-              <label class="lbl" for="indiv-email">E-mail</label>
-              <input type="email" id="indiv-email" placeholder="petr@email.cz" autocomplete="email" />
-              <p class="field-error" id="err-indiv-email">Zadej platný e-mail.</p>
+
+              <label
+                class="lbl"
+                for="indiv-email"
+              >
+                E-mail
+              </label>
+
+              <input
+                type="email"
+                id="indiv-email"
+                placeholder="petr@email.cz"
+                autocomplete="email"
+              />
+
+              <p
+                class="field-error"
+                id="err-indiv-email"
+              >
+                Zadej platný e-mail.
+              </p>
+
             </div>
+
             <label class="consent">
-              <input type="checkbox" id="indiv-consent" />
-              <span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              <span class="txt"><span class="consent-text"></span><button type="button" class="consent-toggle" aria-expanded="false">Zobrazit více</button></span>
+
+              <input
+                type="checkbox"
+                id="indiv-consent"
+              />
+
+              <span class="box">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M5 13l4 4L19 7"
+                    stroke="#fff"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <span class="txt">
+                <span class="consent-text"></span>
+
+                <button
+                  type="button"
+                  class="consent-toggle"
+                  aria-expanded="false"
+                >
+                  Zobrazit více
+                </button>
+              </span>
+
             </label>
+
             <div class="step-nav">
-              <button type="button" class="btn-ghost" data-back="type">← Zpět</button>
-              <button type="submit" class="btn" id="indiv-submit">Přihlásit se</button>
+
+              <button
+                type="button"
+                class="btn-ghost"
+                data-back="type"
+              >
+                ← Zpět
+              </button>
+
+              <button
+                type="submit"
+                class="btn"
+                id="indiv-submit"
+              >
+                Přihlásit se
+              </button>
+
             </div>
-            <p class="field-error" id="err-indiv-submit" style="text-align:center;">Něco se nepodařilo. Zkus to prosím znovu.</p>
+
+            <p
+              class="field-error"
+              id="err-indiv-submit"
+              style="text-align:center;"
+            >
+              Něco se nepodařilo. Zkus to prosím znovu.
+            </p>
+
           </form>
+
         </div>
 
-        <!-- ĎAKOVACIA STRÁNKA -->
-        <div class="screen centered" data-screen="thanks">
+        <!-- THANKS -->
+
+        <div
+          class="screen centered"
+          data-screen="thanks"
+        >
+
           <div class="mark">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#264D39" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+            <svg
+              width="34"
+              height="34"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M5 13l4 4L19 7"
+                stroke="#264D39"
+                stroke-width="2.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
           </div>
-          <h2>Jsi zaregistrovaný/á! 🎉</h2>
-          <p class="big-p">Těšíme se na tebe v Knihobotu na Strossmayerově náměstí. Přijď prosím včas, ať můžeme v 18:00 začít.</p>
+
+          <h2>
+            Jsi zaregistrovaný/á!
+          </h2>
+
+          <p class="big-p">
+            Těšíme se na tebe v Knihobotu na Strossmayerově náměstí.
+            Přijď prosím včas, ať můžeme v 18:00 začít.
+          </p>
+
           <div class="detail-box">
+
             <div class="row">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11Z" stroke="#264D39" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="#264D39" stroke-width="1.8"/></svg>
-              <span>Knihobot Praha 7<small>Strossmayerovo náměstí</small></span>
+
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11Z"
+                  stroke="#264D39"
+                  stroke-width="1.8"
+                />
+                <circle
+                  cx="12"
+                  cy="10"
+                  r="2.4"
+                  stroke="#264D39"
+                  stroke-width="1.8"
+                />
+              </svg>
+
+              <span>
+                Knihobot Praha 7
+                <small>Strossmayerovo náměstí</small>
+              </span>
+
             </div>
+
             <div class="row">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="#264D39" stroke-width="1.8"/><path d="M12 7.5V12l3 2" stroke="#264D39" stroke-width="1.8" stroke-linecap="round"/></svg>
-              <span>Kvíz začíná v 18:00<small>17. září 2026</small></span>
+
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="8.2"
+                  stroke="#264D39"
+                  stroke-width="1.8"
+                />
+                <path
+                  d="M12 7.5V12l3 2"
+                  stroke="#264D39"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+
+              <span>
+                Kvíz začíná v 18:00
+                <small>17. září 2026</small>
+              </span>
+
             </div>
+
           </div>
-          <p class="big-p" style="margin-top:22px;">Registrace je potvrzená! Teď už stačí jen přijít. Pokud by se něco změnilo, dáme ti vědět na zadaný e-mail.</p>
+
+          <p
+            class="big-p"
+            style="margin-top:22px;"
+          >
+            Registrace je potvrzená! Teď už stačí jen přijít.
+            Pokud by se něco změnilo, dáme ti vědět na zadaný e-mail.
+          </p>
+
         </div>
 
-        <!-- FULL: TÍMY PLNÉ -->
-        <div class="screen centered" data-screen="full-teams">
-          <div class="mark warn">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 8v5" stroke="#EC5151" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.3" fill="#EC5151"/><circle cx="12" cy="12" r="9" stroke="#EC5151" stroke-width="1.8"/></svg>
-          </div>
-          <h2>Kapacita týmů je naplněná</h2>
-          <p class="big-p">Kapacita týmů je naplněná. Máme ale ještě <strong id="spots-left">pár</strong> volných míst pro jednotlivce.</p>
-          <p class="big-p">Pokud se chceš zúčastnit, zaregistruj se jako jednotlivec – tým ti najdeme na místě.</p>
-          <button type="button" class="btn" style="margin-top:22px;" data-choose="jednotlivec">Registrovat se jako jednotlivec</button>
+        <!-- FULL TEAMS -->
 
-          <div class="nahradnik" data-nahradnik="tímy plné">
-            <h3>Chceš raději hrát v týmu?</h3>
-            <p class="sub">Nech nám svůj e-mail. Pokud některý z týmů zruší účast, ozveme se ti jako náhradníkovi.</p>
-            <div class="inline">
-              <input type="email" placeholder="tvoje@email.cz" class="nahradnik-email" />
-              <button type="button" class="btn nahradnik-btn">Zapsat</button>
-            </div>
-            <p class="field-error nahradnik-err">Zadej platný e-mail.</p>
-            <p class="ok nahradnik-ok">Hotovo! Ozveme se ti, kdyby se uvolnilo místo.</p>
+        <div
+          class="screen centered"
+          data-screen="full-teams"
+        >
+
+          <div class="mark warn">
+
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M12 8v5"
+                stroke="#EC5151"
+                stroke-width="2.4"
+                stroke-linecap="round"
+              />
+              <circle
+                cx="12"
+                cy="16.5"
+                r="1.3"
+                fill="#EC5151"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="9"
+                stroke="#EC5151"
+                stroke-width="1.8"
+              />
+            </svg>
+
           </div>
-          <p class="big-p" style="margin-top:22px; font-size:14.5px; color:var(--muted);">Ak to tentokrát nevyjde, neboj – kvízy budú na našej pobočke pravidelnou udalosťou, takže ďalšie príležitosti určite prídu.</p>
+
+          <h2>
+            Kapacita týmů je naplněná
+          </h2>
+
+          <p class="big-p">
+            Kapacita týmů je naplněná. Máme ale ještě
+            <strong id="spots-left">pár</strong>
+            volných míst pro jednotlivce.
+          </p>
+
+          <p class="big-p">
+            Pokud se chceš zúčastnit, zaregistruj se jako jednotlivec –
+            tým ti najdeme na místě.
+          </p>
+
+          <button
+            type="button"
+            class="btn"
+            style="margin-top:22px;"
+            data-choose="jednotlivec"
+          >
+            Registrovat se jako jednotlivec
+          </button>
+
+          <div
+            class="nahradnik"
+            data-nahradnik="týmy plné"
+          >
+
+            <h3>
+              Chceš raději hrát v týmu?
+            </h3>
+
+            <p class="sub">
+              Nech nám svůj e-mail. Pokud některý z týmů zruší účast,
+              ozveme se ti jako náhradníkovi.
+            </p>
+
+            <div class="inline">
+
+              <input
+                type="email"
+                placeholder="tvoje@email.cz"
+                class="nahradnik-email"
+              />
+
+              <button
+                type="button"
+                class="btn nahradnik-btn"
+              >
+                Zapsat
+              </button>
+
+            </div>
+
+            <p class="field-error nahradnik-err">
+              Zadej platný e-mail.
+            </p>
+
+            <p class="ok nahradnik-ok">
+              Hotovo! Ozveme se ti, kdyby se uvolnilo místo.
+            </p>
+
+          </div>
+
+          <p
+            class="big-p"
+            style="margin-top:22px; font-size:14.5px; color:var(--muted);"
+          >
+            Kvízy budeme na pobočce pořádat pravidelně,
+            takže další příležitost určitě přijde.
+          </p>
+
         </div>
 
-        <!-- FULL: VŠETKO PLNÉ -->
-        <div class="screen centered" data-screen="full-all">
+        <!-- FULL ALL -->
+
+        <div
+          class="screen centered"
+          data-screen="full-all"
+        >
+
           <div class="mark warn">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 8v5" stroke="#EC5151" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.3" fill="#EC5151"/><circle cx="12" cy="12" r="9" stroke="#EC5151" stroke-width="1.8"/></svg>
+
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M12 8v5"
+                stroke="#EC5151"
+                stroke-width="2.4"
+                stroke-linecap="round"
+              />
+
+              <circle
+                cx="12"
+                cy="16.5"
+                r="1.3"
+                fill="#EC5151"
+              />
+
+              <circle
+                cx="12"
+                cy="12"
+                r="9"
+                stroke="#EC5151"
+                stroke-width="1.8"
+              />
+            </svg>
+
           </div>
-          <h2>Kapacita je naplnená</h2>
-          <p class="big-p">Kapacita kvízu je pro tentokrát úplně naplněná – týmy i místa pro jednotlivce.</p>
-          <div class="nahradnik" data-nahradnik="všetko plné">
-            <h3>Nech nám svůj e-mail</h3>
-            <p class="sub">Ak niekto zruší účasť, ozveme sa ti ako náhradníkovi.</p>
+
+          <h2>
+            Kapacita je naplněná
+          </h2>
+
+          <p class="big-p">
+            Kapacita kvízu je pro tentokrát úplně naplněná –
+            týmy i místa pro jednotlivce.
+          </p>
+
+          <div
+            class="nahradnik"
+            data-nahradnik="všechno plné"
+          >
+
+            <h3>
+              Nech nám svůj e-mail
+            </h3>
+
+            <p class="sub">
+              Pokud někdo zruší účast, ozveme se ti jako náhradníkovi.
+            </p>
+
             <div class="inline">
-              <input type="email" placeholder="tvoje@email.cz" class="nahradnik-email" />
-              <button type="button" class="btn nahradnik-btn">Zapsat</button>
+
+              <input
+                type="email"
+                placeholder="tvoje@email.cz"
+                class="nahradnik-email"
+              />
+
+              <button
+                type="button"
+                class="btn nahradnik-btn"
+              >
+                Zapsat
+              </button>
+
             </div>
-            <p class="field-error nahradnik-err">Zadej platný e-mail.</p>
-            <p class="ok nahradnik-ok">Hotovo! Ozveme se ti, kdyby se uvolnilo místo.</p>
+
+            <p class="field-error nahradnik-err">
+              Zadej platný e-mail.
+            </p>
+
+            <p class="ok nahradnik-ok">
+              Hotovo! Ozveme se ti, kdyby se uvolnilo místo.
+            </p>
+
           </div>
-          <p class="big-p" style="margin-top:22px; font-size:14.5px; color:var(--muted);">Kvízy budeme na pobočce pořádat pravidelně, takže další příležitost určitě přijde.</p>
+
+          <p
+            class="big-p"
+            style="margin-top:22px; font-size:14.5px; color:var(--muted);"
+          >
+            Kvízy budeme na pobočce pořádat pravidelně,
+            takže další příležitost určitě přijde.
+          </p>
+
         </div>
 
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
+
   <footer>
-    <div class="wrap">© Knihobot · Těšíme se na tebe v Praze. · <a href="https://knihobot.cz/c/gdpr" target="_blank" rel="noopener">Ochrana osobních údajů</a></div>
+
+    <div class="wrap">
+
+      © Knihobot · Těšíme se na tebe v Praze. ·
+
+      <a
+        href="https://knihobot.cz/c/gdpr"
+        target="_blank"
+        rel="noopener"
+      >
+        Ochrana osobních údajů
+      </a>
+
+    </div>
+
   </footer>
 
   <script>
-    // ===================== CONFIG =====================
-    // Po nasadení Apps Scriptu sem vlož jeho /exec URL:
-    const ENDPOINT_URL = "";
-    const GDPR_URL = "https://knihobot.cz/c/gdpr";
+
+    /* =========================================================
+       KONFIGURACE
+       ========================================================= */
+
+    const ENDPOINT_URL =
+      "https://script.google.com/macros/s/AKfycbz7CVtrKR_uL-P2GQ-Fq1BbU4hgsj-9ndpxxMb6drcCWo6t2_GL0Af5o38-h4ZDqqVylw/exec";
+
+    const GDPR_URL =
+      "https://knihobot.cz/c/gdpr";
+
     const MAX_TEAMS = 5;
     const MAX_PEOPLE = 25;
-    const DEMO = !ENDPOINT_URL;            // bez endpointu běží demo režim (nezapisuje, jen loguje)
 
-    // Informační text o zpracování osobních údajů
+    const DEMO = false;
+
+
+    /* =========================================================
+       SOUHLAS SE ZPRACOVÁNÍM OSOBNÍCH ÚDAJŮ
+       ========================================================= */
+
     const CONSENT_HTML =
-      'Zaškrtnutím tohoto pole souhlasím se zpracováním svých osobních údajů (jméno a e-mailová adresa) ' +
-      'správcem <strong>Bookbot s.r.o.</strong>, se sídlem Dukelských hrdinů 359/21, 170 00 Praha 7 – Holešovice, ' +
-      'IČO: 05400651, za účelem organizace knižního kvízu a zasílání informací o této akci. ' +
+      'Zaškrtnutím tohoto pole souhlasím se zpracováním svých osobních údajů ' +
+      '(jméno a e-mailová adresa) správcem ' +
+      '<strong>Knihobot s.r.o.</strong>, se sídlem Dukelských hrdinů 359/21, ' +
+      '170 00 Praha 7 – Holešovice, IČO: 05400651, za účelem organizace ' +
+      'knižního kvízu a zasílání informací o této akci. ' +
       'Souhlas je dobrovolný a mohu jej kdykoli odvolat e-mailem. ' +
-      'Zpracování probíhá v souladu s GDPR a platnými právními předpisy. Více v ' +
-      '<a href="' + GDPR_URL + '" target="_blank" rel="noopener">Zásadách ochrany osobních údajů</a>.';
-    document.querySelectorAll('.consent-text').forEach(el => { el.innerHTML = CONSENT_HTML; });
+      'Zpracování probíhá v souladu s GDPR a platnými právními předpisy. ' +
+      'Více v <a href="' +
+      GDPR_URL +
+      '" target="_blank" rel="noopener">Zásadách ochrany osobních údajů</a>.';
 
-    // ===================== JSONP =====================
-    let jsonpSeq = 0;
-    function jsonp(params, timeoutMs = 9000) {
-      return new Promise((resolve, reject) => {
-        const cb = '__kviz_cb_' + (++jsonpSeq);
-        const script = document.createElement('script');
-        let done = false;
-        const cleanup = () => { try { delete window[cb]; } catch (e) { window[cb] = undefined; } script.remove(); clearTimeout(timer); };
-        const timer = setTimeout(() => { if (done) return; done = true; cleanup(); reject(new Error('timeout')); }, timeoutMs);
-        window[cb] = (data) => { if (done) return; done = true; cleanup(); resolve(data); };
-        script.onerror = () => { if (done) return; done = true; cleanup(); reject(new Error('neterror')); };
-        const qs = Object.keys(params).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k])).join('&');
-        script.src = ENDPOINT_URL + '?' + qs + '&callback=' + cb;
-        document.body.appendChild(script);
+    document
+      .querySelectorAll(".consent-text")
+      .forEach((el) => {
+        el.innerHTML = CONSENT_HTML;
       });
+
+
+    /* =========================================================
+       JSONP
+       ========================================================= */
+
+    let jsonpSeq = 0;
+
+    function jsonp(params, timeoutMs = 9000) {
+
+      return new Promise((resolve, reject) => {
+
+        const cb = "__kviz_cb_" + (++jsonpSeq);
+
+        const script = document.createElement("script");
+
+        let done = false;
+
+        const cleanup = () => {
+
+          try {
+            delete window[cb];
+          } catch (e) {
+            window[cb] = undefined;
+          }
+
+          script.remove();
+          clearTimeout(timer);
+        };
+
+        const timer = setTimeout(() => {
+
+          if (done) return;
+
+          done = true;
+
+          cleanup();
+
+          reject(new Error("timeout"));
+
+        }, timeoutMs);
+
+        window[cb] = (data) => {
+
+          if (done) return;
+
+          done = true;
+
+          cleanup();
+
+          resolve(data);
+        };
+
+        script.onerror = () => {
+
+          if (done) return;
+
+          done = true;
+
+          cleanup();
+
+          reject(new Error("neterror"));
+        };
+
+        const qs = Object
+          .keys(params)
+          .map(
+            (k) =>
+              encodeURIComponent(k) +
+              "=" +
+              encodeURIComponent(params[k])
+          )
+          .join("&");
+
+        script.src =
+          ENDPOINT_URL +
+          "?" +
+          qs +
+          "&callback=" +
+          cb;
+
+        document.body.appendChild(script);
+
+      });
+
     }
 
-    // Demo / debug status (len keď DEMO). ?debug=fullteams | fullall | open
+
+    /* =========================================================
+       DEMO STATUS
+       ========================================================= */
+
     function demoStatus() {
-      const d = new URLSearchParams(location.search).get('debug');
-      if (d === 'fullall')   return { teamsCount: 5, peopleCount: 25, individualSpotsLeft: 0, teamFull: true, peopleFull: true };
-      if (d === 'fullteams') return { teamsCount: 5, peopleCount: 10, individualSpotsLeft: 15, teamFull: true, peopleFull: false };
-      return { teamsCount: 0, peopleCount: 0, individualSpotsLeft: MAX_PEOPLE, teamFull: false, peopleFull: false };
+
+      const d =
+        new URLSearchParams(location.search).get("debug");
+
+      if (d === "fullall") {
+
+        return {
+          teamsCount: 5,
+          peopleCount: 25,
+          individualSpotsLeft: 0,
+          teamFull: true,
+          peopleFull: true
+        };
+
+      }
+
+      if (d === "fullteams") {
+
+        return {
+          teamsCount: 5,
+          peopleCount: 10,
+          individualSpotsLeft: 15,
+          teamFull: true,
+          peopleFull: false
+        };
+
+      }
+
+      return {
+        teamsCount: 0,
+        peopleCount: 0,
+        individualSpotsLeft: MAX_PEOPLE,
+        teamFull: false,
+        peopleFull: false
+      };
+
     }
+
+
+    /* =========================================================
+       STATUS
+       ========================================================= */
 
     async function fetchStatus() {
-      if (DEMO) return demoStatus();
-      try { return await jsonp({ action: 'status' }); }
-      catch (e) { console.warn('načtení kapacity selhalo, pokračuji jako by bylo otevřeno:', e); return null; }
+
+      if (DEMO) {
+        return demoStatus();
+      }
+
+      try {
+
+        return await jsonp({
+          action: "status"
+        });
+
+      } catch (e) {
+
+        console.warn(
+          "Načtení kapacity selhalo. Pokračuji jako by bylo otevřeno.",
+          e
+        );
+
+        return null;
+      }
+
     }
+
+
+    /* =========================================================
+       REGISTRACE
+       ========================================================= */
 
     async function register(payload) {
-      if (DEMO) { console.log('[DEMO] register:', payload); return { result: 'ok' }; }
-      try { return await jsonp(Object.assign({ action: 'register' }, payload)); }
-      catch (e) { console.error('registrace selhala:', e); return { result: 'error' }; }
+
+      if (DEMO) {
+
+        console.log("[DEMO] register:", payload);
+
+        return {
+          result: "ok"
+        };
+
+      }
+
+      try {
+
+        return await jsonp(
+          Object.assign(
+            {
+              action: "register"
+            },
+            payload
+          )
+        );
+
+      } catch (e) {
+
+        console.error(
+          "Registrace selhala:",
+          e
+        );
+
+        return {
+          result: "error"
+        };
+
+      }
+
     }
 
-    async function saveNahradnik(email, context) {
-      if (DEMO) { console.log('[DEMO] nahradnik:', email, context); return { result: 'ok' }; }
-      try { return await jsonp({ action: 'nahradnik', email: email, context: context }); }
-      catch (e) { console.error('nahradnik zlyhal:', e); return { result: 'error' }; }
+
+    /* =========================================================
+       NÁHRADNÍCI
+       ========================================================= */
+
+    async function saveNahradnik(
+      email,
+      context
+    ) {
+
+      if (DEMO) {
+
+        console.log(
+          "[DEMO] nahradnik:",
+          email,
+          context
+        );
+
+        return {
+          result: "ok"
+        };
+
+      }
+
+      try {
+
+        return await jsonp({
+          action: "nahradnik",
+          email: email,
+          context: context
+        });
+
+      } catch (e) {
+
+        console.error(
+          "Uložení náhradníka selhalo:",
+          e
+        );
+
+        return {
+          result: "error"
+        };
+
+      }
+
     }
 
-    // ===================== NAVIGÁCIA =====================
-    const app = document.getElementById('app');
-    const card = document.getElementById('card');
-    const screens = Array.from(document.querySelectorAll('.screen'));
-    function showScreen(name, scroll) {
-      screens.forEach(s => s.classList.toggle('active', s.dataset.screen === name));
-      if (scroll !== false) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    /* =========================================================
+       NAVIGACE
+       ========================================================= */
+
+    const app =
+      document.getElementById("app");
+
+    const card =
+      document.getElementById("card");
+
+    const screens =
+      Array.from(
+        document.querySelectorAll(".screen")
+      );
+
+
+    function showScreen(
+      name,
+      scroll = true
+    ) {
+
+      screens.forEach((s) => {
+
+        s.classList.toggle(
+          "active",
+          s.dataset.screen === name
+        );
+
+      });
+
+      if (scroll) {
+
+        card.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
     }
 
-    document.getElementById('start-btn').addEventListener('click', () => {
-      document.getElementById('intro').style.display = 'none';
-      app.style.display = 'block';
-      showScreen('type');
-    });
 
-    // Q1 výběr typu (funguje i z tlačítka na stránce „týmy plné“)
-    document.querySelectorAll('[data-choose]').forEach(btn => {
-      btn.addEventListener('click', () => routeType(btn.dataset.choose));
-    });
+    document
+      .getElementById("start-btn")
+      .addEventListener(
+        "click",
+        () => {
+
+          document
+            .getElementById("intro")
+            .style.display = "none";
+
+          app.style.display = "block";
+
+          showScreen("type");
+
+        }
+      );
+
+
+    /* =========================================================
+       VOLBA TYPU
+       ========================================================= */
+
+    document
+      .querySelectorAll("[data-choose]")
+      .forEach((btn) => {
+
+        btn.addEventListener(
+          "click",
+          () => {
+
+            routeType(
+              btn.dataset.choose
+            );
+
+          }
+        );
+
+      });
+
 
     async function routeType(type) {
-      showScreen('loading');
-      const s = await fetchStatus();
-      if (type === 'tim') {
-        if (s && s.peopleFull) return showScreen('full-all');
-        if (s && s.teamFull) {
-          const left = Math.max(0, s.individualSpotsLeft || 0);
-          document.getElementById('spots-left').textContent = String(left);
-          return showScreen('full-teams');
+
+      showScreen("loading");
+
+      const s =
+        await fetchStatus();
+
+      if (type === "tim") {
+
+        if (s && s.peopleFull) {
+
+          return showScreen("full-all");
+
         }
-        return showScreen('teamsize');
-      } else { // jednotlivec
-        if (s && s.peopleFull) return showScreen('full-all');
-        return showScreen('individual');
+
+        if (s && s.teamFull) {
+
+          const left =
+            Math.max(
+              0,
+              s.individualSpotsLeft || 0
+            );
+
+          document
+            .getElementById("spots-left")
+            .textContent =
+            String(left);
+
+          return showScreen("full-teams");
+
+        }
+
+        return showScreen("teamsize");
+
       }
+
+      /* JEDNOTLIVEC */
+
+      if (s && s.peopleFull) {
+
+        return showScreen("full-all");
+
+      }
+
+      return showScreen("individual");
+
     }
 
-    // Späť / goto v rámci formulára
-    document.querySelectorAll('[data-back]').forEach(b => b.addEventListener('click', () => showScreen(b.dataset.back)));
 
-    // ===================== Q2: počet členů =====================
-    document.querySelectorAll('#pills input').forEach(r => {
-      r.addEventListener('change', () => hide('err-members'));
-    });
-    document.getElementById('members-next').addEventListener('click', () => {
-      if (!document.querySelector('input[name="members"]:checked')) { show('err-members'); return; }
-      showScreen('teamcontact');
-    });
+    /* =========================================================
+       ZPĚT
+       ========================================================= */
 
-    // ===================== helpers =====================
-    function show(id) { document.getElementById(id).classList.add('show'); }
-    function hide(id) { document.getElementById(id).classList.remove('show'); }
-    function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
-    ['team-name','team-leader','team-email','indiv-name','indiv-email'].forEach(id => {
-      const el = document.getElementById(id); if (el) el.addEventListener('input', () => hide('err-' + id));
-    });
-    // Rozbaľovací text súhlasu ("Zobrazit více" / "Zobrazit méně")
-    document.querySelectorAll('.consent-toggle').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault(); e.stopPropagation();  // neprepínaj checkbox
-        const txt = btn.parentElement.querySelector('.consent-text');
-        const open = txt.classList.toggle('open');
-        btn.textContent = open ? 'Zobrazit méně' : 'Zobrazit více';
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document
+      .querySelectorAll("[data-back]")
+      .forEach((b) => {
+
+        b.addEventListener(
+          "click",
+          () => {
+
+            showScreen(
+              b.dataset.back
+            );
+
+          }
+        );
+
       });
-    });
 
-    // ===================== Odeslání: TÝM =====================
-    const teamForm = document.getElementById('team-form');
-    const teamSubmit = document.getElementById('team-submit');
-    teamForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      hide('err-team-submit');
-      const name = document.getElementById('team-name').value.trim();
-      const leader = document.getElementById('team-leader').value.trim();
-      const email = document.getElementById('team-email').value.trim();
-      const consent = document.getElementById('team-consent').checked;
-      const members = (document.querySelector('input[name="members"]:checked') || {}).value;
-      let ok = true;
-      if (!name) { show('err-team-name'); ok = false; }
-      if (!leader) { show('err-team-leader'); ok = false; }
-      if (!validEmail(email)) { show('err-team-email'); ok = false; }
-      if (!members) { showScreen('teamsize'); show('err-members'); return; }
-      if (!ok) return;
 
-      teamSubmit.disabled = true; teamSubmit.textContent = 'Přihlašuji…';
-      const res = await register({ type: 'tim', teamName: name, members: members, name: leader, email: email, consent: consent ? 'ano' : 'nie' });
-      teamSubmit.disabled = false; teamSubmit.textContent = 'Přihlásit tým';
+    /* =========================================================
+       POČET ČLENŮ
+       ========================================================= */
 
-      if (res && res.result === 'ok') { showScreen('thanks'); }
-      else if (res && res.result === 'full') {
-        if (res.reason === 'teams') { const s = await fetchStatus(); document.getElementById('spots-left').textContent = String(Math.max(0,(s&&s.individualSpotsLeft)||0)); showScreen('full-teams'); }
-        else { showScreen('full-all'); }
-      } else { show('err-team-submit'); }
-    });
+    document
+      .querySelectorAll(
+        '#pills input'
+      )
+      .forEach((r) => {
 
-    // ===================== Odeslání: JEDNOTLIVEC =====================
-    const indivForm = document.getElementById('indiv-form');
-    const indivSubmit = document.getElementById('indiv-submit');
-    indivForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      hide('err-indiv-submit');
-      const name = document.getElementById('indiv-name').value.trim();
-      const email = document.getElementById('indiv-email').value.trim();
-      const consent = document.getElementById('indiv-consent').checked;
-      let ok = true;
-      if (!name) { show('err-indiv-name'); ok = false; }
-      if (!validEmail(email)) { show('err-indiv-email'); ok = false; }
-      if (!ok) return;
+        r.addEventListener(
+          "change",
+          () => {
 
-      indivSubmit.disabled = true; indivSubmit.textContent = 'Přihlašuji…';
-      const res = await register({ type: 'jednotlivec', teamName: '', members: 1, name: name, email: email, consent: consent ? 'ano' : 'nie' });
-      indivSubmit.disabled = false; indivSubmit.textContent = 'Přihlásit se';
+            hide("err-members");
 
-      if (res && res.result === 'ok') { showScreen('thanks'); }
-      else if (res && res.result === 'full') { showScreen('full-all'); }
-      else { show('err-indiv-submit'); }
-    });
+          }
+        );
 
-    // ===================== E-maily náhradníků =====================
-    document.querySelectorAll('[data-nahradnik]').forEach(box => {
-      const ctx = box.dataset.nahradnik;
-      const input = box.querySelector('.nahradnik-email');
-      const btn = box.querySelector('.nahradnik-btn');
-      const err = box.querySelector('.nahradnik-err');
-      const ok = box.querySelector('.nahradnik-ok');
-      input.addEventListener('input', () => err.classList.remove('show'));
-      btn.addEventListener('click', async () => {
-        const email = input.value.trim();
-        if (!validEmail(email)) { err.classList.add('show'); return; }
-        btn.disabled = true; btn.textContent = 'Zapisuji…';
-        const res = await saveNahradnik(email, ctx);
-        if (res && res.result === 'ok') {
-          box.querySelector('.inline').style.display = 'none';
-          ok.classList.add('show');
-        } else { btn.disabled = false; btn.textContent = 'Zapsat'; err.textContent = 'Nepodarilo sa. Skús to prosím znova.'; err.classList.add('show'); }
       });
-    });
+
+
+    document
+      .getElementById("members-next")
+      .addEventListener(
+        "click",
+        () => {
+
+          const selected =
+            document.querySelector(
+              'input[name="members"]:checked'
+            );
+
+          if (!selected) {
+
+            show("err-members");
+
+            return;
+          }
+
+          showScreen("teamcontact");
+
+        }
+      );
+
+
+    /* =========================================================
+       HELPERS
+       ========================================================= */
+
+    function show(id) {
+
+      document
+        .getElementById(id)
+        .classList
+        .add("show");
+
+    }
+
+
+    function hide(id) {
+
+      document
+        .getElementById(id)
+        .classList
+        .remove("show");
+
+    }
+
+
+    function validEmail(value) {
+
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+        value
+      );
+
+    }
+
+
+    [
+      "team-name",
+      "team-leader",
+      "team-email",
+      "indiv-name",
+      "indiv-email"
+    ]
+      .forEach((id) => {
+
+        const el =
+          document.getElementById(id);
+
+        if (el) {
+
+          el.addEventListener(
+            "input",
+            () => hide("err-" + id)
+          );
+
+        }
+
+      });
+
+
+    /* =========================================================
+       ROZBALENÍ GDPR
+       ========================================================= */
+
+    document
+      .querySelectorAll(".consent-toggle")
+      .forEach((btn) => {
+
+        btn.addEventListener(
+          "click",
+          (e) => {
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            const txt =
+              btn.parentElement
+                .querySelector(".consent-text");
+
+            const open =
+              txt.classList.toggle("open");
+
+            btn.textContent =
+              open
+                ? "Zobrazit méně"
+                : "Zobrazit více";
+
+            btn.setAttribute(
+              "aria-expanded",
+              open ? "true" : "false"
+            );
+
+          }
+        );
+
+      });
+
+
+    /* =========================================================
+       REGISTRACE TÝMU
+       ========================================================= */
+
+    const teamForm =
+      document.getElementById(
+        "team-form"
+      );
+
+    const teamSubmit =
+      document.getElementById(
+        "team-submit"
+      );
+
+
+    teamForm.addEventListener(
+      "submit",
+      async (e) => {
+
+        e.preventDefault();
+
+        hide("err-team-submit");
+
+        const name =
+          document
+            .getElementById("team-name")
+            .value
+            .trim();
+
+        const leader =
+          document
+            .getElementById("team-leader")
+            .value
+            .trim();
+
+        const email =
+          document
+            .getElementById("team-email")
+            .value
+            .trim();
+
+        const consent =
+          document
+            .getElementById("team-consent")
+            .checked;
+
+        const members =
+          (
+            document.querySelector(
+              'input[name="members"]:checked'
+            ) || {}
+          ).value;
+
+        let ok = true;
+
+
+        if (!name) {
+
+          show("err-team-name");
+
+          ok = false;
+
+        }
+
+
+        if (!leader) {
+
+          show("err-team-leader");
+
+          ok = false;
+
+        }
+
+
+        if (!validEmail(email)) {
+
+          show("err-team-email");
+
+          ok = false;
+
+        }
+
+
+        if (!members) {
+
+          showScreen("teamsize");
+
+          show("err-members");
+
+          return;
+
+        }
+
+
+        if (!consent) {
+
+          alert(
+            "Pro odeslání registrace je potřeba souhlasit se zpracováním osobních údajů."
+          );
+
+          ok = false;
+
+        }
+
+
+        if (!ok) return;
+
+
+        teamSubmit.disabled = true;
+
+        teamSubmit.textContent =
+          "Přihlašuji…";
+
+
+        const res =
+          await register({
+
+            type: "tim",
+
+            teamName: name,
+
+            members: members,
+
+            name: leader,
+
+            email: email,
+
+            consent: "ano"
+
+          });
+
+
+        teamSubmit.disabled = false;
+
+        teamSubmit.textContent =
+          "Přihlásit tým";
+
+
+        if (
+          res &&
+          res.result === "ok"
+        ) {
+
+          showScreen("thanks");
+
+        }
+
+        else if (
+          res &&
+          res.result === "full"
+        ) {
+
+          if (
+            res.reason === "teams"
+          ) {
+
+            const s =
+              await fetchStatus();
+
+            document
+              .getElementById(
+                "spots-left"
+              )
+              .textContent =
+              String(
+                Math.max(
+                  0,
+                  (s &&
+                    s.individualSpotsLeft) ||
+                  0
+                )
+              );
+
+            showScreen(
+              "full-teams"
+            );
+
+          }
+
+          else {
+
+            showScreen(
+              "full-all"
+            );
+
+          }
+
+        }
+
+        else {
+
+          show("err-team-submit");
+
+        }
+
+      }
+    );
+
+
+    /* =========================================================
+       REGISTRACE JEDNOTLIVCE
+       ========================================================= */
+
+    const indivForm =
+      document.getElementById(
+        "indiv-form"
+      );
+
+    const indivSubmit =
+      document.getElementById(
+        "indiv-submit"
+      );
+
+
+    indivForm.addEventListener(
+      "submit",
+      async (e) => {
+
+        e.preventDefault();
+
+        hide("err-indiv-submit");
+
+
+        const name =
+          document
+            .getElementById(
+              "indiv-name"
+            )
+            .value
+            .trim();
+
+
+        const email =
+          document
+            .getElementById(
+              "indiv-email"
+            )
+            .value
+            .trim();
+
+
+        const consent =
+          document
+            .getElementById(
+              "indiv-consent"
+            )
+            .checked;
+
+
+        let ok = true;
+
+
+        if (!name) {
+
+          show("err-indiv-name");
+
+          ok = false;
+
+        }
+
+
+        if (!validEmail(email)) {
+
+          show("err-indiv-email");
+
+          ok = false;
+
+        }
+
+
+        if (!consent) {
+
+          alert(
+            "Pro odeslání registrace je potřeba souhlasit se zpracováním osobních údajů."
+          );
+
+          ok = false;
+
+        }
+
+
+        if (!ok) return;
+
+
+        indivSubmit.disabled = true;
+
+        indivSubmit.textContent =
+          "Přihlašuji…";
+
+
+        const res =
+          await register({
+
+            type: "jednotlivec",
+
+            teamName: "",
+
+            members: 1,
+
+            name: name,
+
+            email: email,
+
+            consent: "ano"
+
+          });
+
+
+        indivSubmit.disabled = false;
+
+        indivSubmit.textContent =
+          "Přihlásit se";
+
+
+        if (
+          res &&
+          res.result === "ok"
+        ) {
+
+          showScreen("thanks");
+
+        }
+
+        else if (
+          res &&
+          res.result === "full"
+        ) {
+
+          showScreen(
+            "full-all"
+          );
+
+        }
+
+        else {
+
+          show(
+            "err-indiv-submit"
+          );
+
+        }
+
+      }
+    );
+
+
+    /* =========================================================
+       NÁHRADNÍCI
+       ========================================================= */
+
+    document
+      .querySelectorAll(
+        "[data-nahradnik]"
+      )
+      .forEach((box) => {
+
+        const ctx =
+          box.dataset.nahradnik;
+
+        const input =
+          box.querySelector(
+            ".nahradnik-email"
+          );
+
+        const btn =
+          box.querySelector(
+            ".nahradnik-btn"
+          );
+
+        const err =
+          box.querySelector(
+            ".nahradnik-err"
+          );
+
+        const ok =
+          box.querySelector(
+            ".nahradnik-ok"
+          );
+
+
+        input.addEventListener(
+          "input",
+          () => {
+
+            err.classList.remove(
+              "show"
+            );
+
+          }
+        );
+
+
+        btn.addEventListener(
+          "click",
+          async () => {
+
+            const email =
+              input.value.trim();
+
+
+            if (!validEmail(email)) {
+
+              err.classList.add(
+                "show"
+              );
+
+              return;
+
+            }
+
+
+            btn.disabled = true;
+
+            btn.textContent =
+              "Zapisuji…";
+
+
+            const res =
+              await saveNahradnik(
+                email,
+                ctx
+              );
+
+
+            if (
+              res &&
+              res.result === "ok"
+            ) {
+
+              box
+                .querySelector(
+                  ".inline"
+                )
+                .style.display =
+                "none";
+
+              ok.classList.add(
+                "show"
+              );
+
+            }
+
+            else {
+
+              btn.disabled = false;
+
+              btn.textContent =
+                "Zapsat";
+
+              err.textContent =
+                "Nepodařilo se. Zkus to prosím znovu.";
+
+              err.classList.add(
+                "show"
+              );
+
+            }
+
+          }
+        );
+
+      });
+
   </script>
+
 </body>
 </html>
