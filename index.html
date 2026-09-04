@@ -473,12 +473,40 @@
     .consent input {
       position: absolute;
       opacity: 0;
-      width: 0;
-      height: 0;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      pointer-events: none;
     }
 
+    /* OPRAVENÝ VLASTNÍ CHECKBOX */
+
     .consent .box {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      flex: 0 0 20px;
       margin-top: 2px;
+      border: 2px solid var(--green-muted);
+      border-radius: 4px;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+    }
+
+    .consent .box svg {
+      width: 14px;
+      height: 14px;
+      display: block;
+      opacity: 0;
+      transform: scale(0.65);
+      transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
     }
 
     .consent input:checked ~ .box {
@@ -496,6 +524,8 @@
     }
 
     .consent .txt {
+      flex: 1;
+      min-width: 0;
       font-size: 12.5px;
       color: var(--body-2);
       line-height: 1.5;
@@ -1148,6 +1178,7 @@
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
+                  aria-hidden="true"
                 >
                   <path
                     d="M5 13l4 4L19 7"
@@ -1287,6 +1318,7 @@
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
+                  aria-hidden="true"
                 >
                   <path
                     d="M5 13l4 4L19 7"
@@ -2137,7 +2169,7 @@
 
     document
       .querySelectorAll(
-        '#pills input'
+        "#pills input"
       )
       .forEach((r) => {
 
